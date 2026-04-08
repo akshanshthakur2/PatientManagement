@@ -7,6 +7,29 @@
     <meta charset="UTF-8">
     <title>Patients | Nexus Health</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <style>
+        /* Specific style for the Discharge action */
+        .btn-discharge {
+            color: #059669;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 12px;
+            border: 1.5px solid #059669;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .btn-discharge:hover {
+            background-color: #059669;
+            color: white;
+        }
+        .text-discharged {
+            color: red;
+            font-style: italic;
+            font-size: 0.85rem;
+			font-weight: 600;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,7 +37,7 @@
         <header class="header">
             <a href="${pageContext.request.contextPath}/index" class="back-link">← Back to Dashboard</a>
             <h1>Patient Directory</h1>
-            <p>Manage existing records or register new hospital admissions.</p>
+            <p>Monitor patient status and manage hospital discharges.</p>
         </header>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
@@ -30,11 +53,11 @@
                     <th>Age</th>
                     <th>Assigned Doctor</th>
                     <th>Status</th>
+                    <th style="text-align: center;">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <% 
-                    // Retrieve the 'patients' list from the model attribute
                     List<Patient> patientList = (List<Patient>) request.getAttribute("patients");
                     if (patientList != null && !patientList.isEmpty()) {
                         for (Patient p : patientList) {
@@ -49,13 +72,24 @@
                         <td>
                             <span class="badge"><%= p.getStatus() %></span>
                         </td>
+                        <td style="text-align: center;">
+                            <% if (!"Discharged".equalsIgnoreCase(p.getStatus())) { %>
+                                <a href="/patients/discharge/<%= p.getId() %>" 
+                                   class="btn-discharge"
+                                   onclick="return confirm('Confirm discharge for <%= p.getName() %>?')">
+                                   Discharge
+                                </a>
+                            <% } else { %>
+                                <span class="text-discharged">Discharged</span>
+                            <% } %>
+                        </td>
                     </tr>
                 <% 
                         }
                     } else { 
                 %>
                     <tr>
-                        <td colspan="5" style="text-align: center; color: #64748b; padding: 20px;">
+                        <td colspan="6" style="text-align: center; color: #64748b; padding: 20px;">
                             No patients found in the database.
                         </td>
                     </tr>
