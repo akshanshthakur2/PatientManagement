@@ -5,8 +5,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Add Patient | Nexus Health</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <title>Add Patient</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
@@ -45,7 +45,6 @@
                         <select id="doctor" name="doctor.id" required>
                             <option value="">-- Select Doctor --</option>
                             <% 
-                                // Casting the model attribute 'doctors' back to a List
                                 List<Doctor> doctors = (List<Doctor>) request.getAttribute("doctors");
                                 if (doctors != null) {
                                     for (Doctor doc : doctors) {

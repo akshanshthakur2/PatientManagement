@@ -6,14 +6,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Doctors | Nexus Health</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <title>Doctors</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
     <div class="container">
         <header class="header">
-            <a href="${pageContext.request.contextPath}/index" class="back-link" style="color: #10b981;">← Back to Dashboard</a>
+            <a href="/index" class="back-link" style="color: #10b981;">← Back to Dashboard</a>
             <h1>Doctor Directory</h1>
             <p>Add medical professionals and review their patient load.</p>
         </header>

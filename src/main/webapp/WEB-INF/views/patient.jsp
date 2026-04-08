@@ -5,10 +5,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Patients | Nexus Health</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <title>Patients</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <style>
-        /* Specific style for the Discharge action */
+		
         .btn-discharge {
             color: #059669;
             text-decoration: none;
@@ -29,20 +29,21 @@
             font-size: 0.85rem;
 			font-weight: 600;
         }
+		
     </style>
 </head>
 <body>
 
     <div class="container">
         <header class="header">
-            <a href="${pageContext.request.contextPath}/index" class="back-link">← Back to Dashboard</a>
+            <a href="/index" class="back-link">← Back to Dashboard</a>
             <h1>Patient Directory</h1>
             <p>Monitor patient status and manage hospital discharges.</p>
         </header>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
             <h2>Active Patient List</h2>
-            <a href="${pageContext.request.contextPath}/patients/addPatient" class="btn-submit" style="text-decoration: none; display: inline-block;">+ Add New Patient</a>
+            <a href="/patients/addPatient" class="btn-submit" style="text-decoration: none; display: inline-block;">+ Add New Patient</a>
         </div>
 
         <table class="data-table">
