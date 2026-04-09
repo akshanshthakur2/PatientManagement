@@ -71,7 +71,7 @@
                             <%= (p.getDoctor() != null) ? "Dr. " + p.getDoctor().getName() : "Unassigned" %>
                         </td>
                         <td>
-                            <span class="badge"><%= p.getStatus() %></span>
+                            	<span class="badge"><%= p.getStatus() %></span>
                         </td>
                         <td style="text-align: center;">
                             <% if (!"Discharged".equalsIgnoreCase(p.getStatus())) { %>

@@ -22,8 +22,6 @@ public class PatientController {
 
     private final PatientRepository patientRepository;
 
-    private final DoctorRepository doctorRepository;
-
     private final PatientService patientService;
 
     private final DoctorService doctorService;
@@ -31,7 +29,6 @@ public class PatientController {
     PatientController(DoctorService doctorService, PatientService patientService, DoctorRepository doctorRepository, PatientRepository patientRepository) {
         this.doctorService = doctorService;
         this.patientService = patientService;
-        this.doctorRepository = doctorRepository;
         this.patientRepository = patientRepository;
     }
 	
